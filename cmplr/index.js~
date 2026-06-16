@@ -1,0 +1,29 @@
+const gates = {
+    'sin': (arg1) => {
+      return Math.sin(x)  
+    },
+    'add': (arg1, arg2) => {
+      return parseInt(arg1) + parseInt(arg2)
+    },
+    'mul': (arg1, arg2) => {
+      return parseInt(arg1) * parseInt(arg2)
+    },
+    'gth': (arg1, arg2) => {
+        return parseInt(arg1) >= parseInt(arg2)
+    },
+    '@': (arg) => {
+      return arg
+    }
+}
+const stairs = `
+    return (func) => {
+        return (args) => {
+            return gates[func](...args)
+        }
+    }
+`
+const runes = [':-', '^-', '|=', '=/', '|-', '?:', '%=', '$']
+
+const caseByCase = (rune) => `case '${rune}': ${stairs} break;`
+const runeRunner = eval(`const appendage = (rune) => {switch(rune){${runes.reduce((initial, rune) => {
+    return initial + caseByCase(rune)
