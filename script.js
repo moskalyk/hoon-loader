@@ -40,6 +40,10 @@ const createDebuggerElement = (hoonFile) => {
     // await createDebuggerElement('./gen/if.hoon')([1,2])
     // await createDebuggerElement('./gen/trap.hoon')([10])
     
+    await createDebuggerElement('./gen/flecCash.hoon')([2, 16/30])
+    await createDebuggerElement('./gen/flecCash.hoon')([1, 15/30])
+    await createDebuggerElement('./gen/flecCash.hoon')([1, 30/30])
+    
     await createDebuggerElement('./gen/flexCash.hoon')()
     await createDebuggerElement('./gen/flexFlecCash.hoon')()
     await createDebuggerElement('./gen/composed1.hoon')()
